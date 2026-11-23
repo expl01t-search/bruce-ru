@@ -1,0 +1,12 @@
+# Strings of the "Fosfor" UI style (src/core/ui_fosfor.cpp) and its settings entry
+=	UI Style: Fosfor	Стиль: Фосфор
+=	UI Style: Classic	Стиль: Классика
+=	SELECT  M5 OK  PWR+B BACK	ВЫБОР  M5 ОК  PWR+B НАЗАД
+=	SELECT  M5 OK	ВЫБОР  M5 ОК
+=	*** ERROR ***	*** ОШИБКА ***
+=	!!! WARNING !!!	!!! ВНИМАНИЕ !!!
+=	--- INFO ---	--- ИНФО ---
+=	+++ DONE +++	+++ ГОТОВО +++
+=	>>> MESSAGE	>>> СООБЩЕНИЕ
+=	Menu	Меню
+=	Confirmation	Подтверждение

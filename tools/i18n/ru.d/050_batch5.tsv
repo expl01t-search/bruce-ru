@@ -1,0 +1,179 @@
+# batch 5: candidates 2061-2660 (heuristic "maybe" group)
+=	Expires:	Срок:
+=	Original large RAW waveform remains in the source file.	Исходный большой RAW-сигнал остается в файле.
+=	Preset:	Пресет:
+=	Seed:	Seed:
+=	Valid from:	Действует с:
+=	BF not found	BF не найден
+$	   ESC cancel	   ESC отмена
+=	ESC cancel	ESC отмена
+=	SEL: settings	SEL: настройки
+=	SEL: signal	SEL: сигнал
+$	 (Custom)	 (свой)
+$	 (Default)	 (по умолч.)
+^	 (expected 	 (ожид.
+=	(matches expected size)	(размер совпадает)
+=	(verify)	(проверка)
+$	 - UNKNOWN COMMAND	 - НЕИЗВЕСТНАЯ КОМАНДА
+$	 > Config	 > Настройки
+$	 > Device	 > Устройство
+$	 found!	 найдено!
+$	 GB	 ГБ
+$	 MB	 МБ
+$	 MHz  < > scroll	 МГц  < > листать
+=	no edges at cursor	нет фронтов у курсора
+$	 STOPPED	 ОСТАНОВЛЕН
+$	 targets selected	 целей выбрано
+=	(-55) More Accurate	(-55) Точнее
+=	(-65) Default	(-65) По умолч.
+=	(-80) Less Accurate	(-80) Грубее
+=	(Unknown)	(Неизвестно)
+=	* Auto Karma	* Авто Karma
+=	* Auto Portal	* Автопортал
+=	* Beaconing	* Маяки
+=	* Clone Detection	* Поиск клонов
+=	* Clone Mode	* Режим клона
+=	* Deauth	* Деаут
+=	* Fast Tier	* Быстрый режим
+=	* High Tier	* Мощный режим
+=	* HS Capture	* Захват HS
+=	* Medium Tier	* Средний режим
+=	* Tiered Attack	* Ступенч. атака
+=	*hidden*	*скрыто*
+=	*HIDDEN*	*СКРЫТО*
+=	+ Add New Custom Name	+ Добавить свое имя
+$	, valid: false	, верно: нет
+$	, valid: true	, верно: да
+=	- Auto Karma	- Авто Karma
+=	- Auto Portal	- Автопортал
+=	- Beaconing	- Маяки
+=	- Clone Detection	- Поиск клонов
+=	- Clone Mode	- Режим клона
+=	- Deauth	- Деаут
+=	- Fast Tier	- Быстрый режим
+=	- High Tier	- Мощный режим
+=	- HS Capture	- Захват HS
+=	- Medium Tier	- Средний режим
+=	- Tiered Attack	- Ступенч. атака
+=	--- Actions ---	--- Действия ---
+=	-> CLICK <-	-> КЛИК <-
+=	-> CLICKING <-	-> КЛИКАЮ <-
+$	...\n(truncated)	...\n(обрезано)
+=	10 (+ 1 initial)	10 (+1 первый)
+=	12-Hour Format	12-часовой формат
+=	24-Hour Format	24-часовой формат
+=	5  (+ 1 initial)	5  (+1 первый)
+=	: RX	: прием
+=	: RX + encoder	: прием + кодер
+=	< Back	< Назад
+^	<Hidden SSID> 	<Скрытый SSID>
+=	<no name>	<без имени>
+=	> Back	> Назад
+=	[Command executed, no output]	[Команда выполнена, вывода нет]
+=	[SEL] Scan options	[SEL] Опции скана
+=	[SEL] Settings	[SEL] Настройки
+=	[SEL] Signal menu	[SEL] Меню сигнала
+=	About	О программе
+=	About / limits	О программе/ограничения
+=	ACTIVATED	АКТИВИРОВАНО
+=	Active Broadcast Attack	Активная атака вещанием
+=	Active Portal:	Активный портал:
+=	Add Evil Wifi	Добавить Evil WiFi
+=	Add MIF Key	Добавить ключ MIF
+=	address:	адрес:
+=	Adv ms	Объявл. мс
+=	Advertising Channels	Каналы объявлений
+=	Advertising Spam	Спам объявлениями
+=	Aggressive connection	Агрессивное подключение
+=	AID: (não encontrado no PPSE)	AID: (не найден в PPSE)
+=	ALERT:	ТРЕВОГА:
+=	All Ch: OFF	Все каналы: ВЫКЛ
+=	All Ch: ON	Все каналы: ВКЛ
+=	All Exploits	Все эксплойты
+=	All ranges	Все диапазоны
+=	Allow	Разрешить
+=	Allow /creds access	Разрешить доступ к /creds
+=	Allow /ssid access	Разрешить доступ к /ssid
+=	Always allow peer	Всегда разрешать узел
+=	Android Device Alert	Оповещение Android
+=	Android Keyboard	Клавиатура Android
+=	Anti-Clockwise	Против часовой
+=	any key to continue	любая кнопка - далее
+=	AP info	Инфо о точке
+=	AP mode	Режим точки
+=	AP Mode	Режим точки
+=	Append number	Добавить номер
+=	Apple Action Modal	Окно действия Apple
+=	Apple Not Your Device	Apple: чужое устройство
+=	Apple Pairing Prompt	Запрос сопряжения Apple
+=	Application data:	Данные приложения:
+=	Application:	Приложение:
+=	Attack failed	Атака не удалась
+=	Attack Settings	Настройки атаки
+=	Attack Strategy	Стратегия атаки
+=	Attack successful	Атака успешна
+=	Audio Control Test	Тест управления звуком
+=	AUDIO PLAYER (BETA)	АУДИОПЛЕЕР (БЕТА)
+=	Audio Stack Crash	Сбой аудиостека
+=	Audio Suite	Аудионабор
+=	Auth Bypass Suite	Обход авторизации
+=	Auto	Авто
+=	Auto Hop ON/OFF	Автопрыжки ВКЛ/ВЫКЛ
+=	Auto test	Автотест
+=	Auto:	Авто:
+=	AVRCP Media Control	Управление медиа AVRCP
+=	BACK	НАЗАД
+=	Back to Clock	Назад к часам
+=	Back to Config	Назад к настройкам
+=	BadUSB Pins	Пины BadUSB
+=	BadUSB Run	Запуск BadUSB
+=	BASIC	БАЗОВЫЙ
+=	Basic Keystrokes	Простые нажатия
+=	Baud:	Скорость:
+=	Baudrate:	Скорость:
+=	Beacon	Маяк
+=	Beacon SPAM	Спам маяками
+=	BLE Beacon Spam	Спам маяками BLE
+=	BLE JAMMER ACTIVE	ГЛУШИЛКА BLE АКТИВНА
+=	BLE Keyboard	BLE-клавиатура
+=	BLE name	Имя BLE
+=	BLE Scan	Скан BLE
+=	BLE Spam	Спам BLE
+=	BLE:OFF	BLE:ВЫКЛ
+=	BLE:ON	BLE:ВКЛ
+=	Block %u: [AUTH FAIL]	Блок %u: [ОШИБКА АВТ.]
+=	block reads (Read Without Encryption) are not supported.	чтение блоков без шифрования не поддерживается.
+=	BLUE	СИНИЙ
+=	Blue Channel	Синий канал
+=	Boot Keyboard	Boot-клавиатура
+=	Breathe	Дыхание
+=	Brightness	Яркость
+=	BRIGHTNESS+	ЯРКОСТЬ+
+=	BRIGHTNESS-	ЯРКОСТЬ-
+=	Broadcast	Вещание
+=	BROADCAST	ВЕЩАНИЕ
+=	Broadcast (Advertise SSIDs)	Вещание (объявлять SSID)
+=	Bruce Logic Analyzer	Лог. анализатор Bruce
+=	Bruce Touch Calibration	Калибровка касаний Bruce
+=	Bruteforce	Перебор
+=	Buffer Overflow:	Переполнение буфера:
+=	Button	Кнопка
+=	Buzzer Pin	Пин пищалки
+=	Calibrate Touch	Калибровка касаний
+=	Can we have even more friends?	Можно еще друзей?
+=	Cannot open file:	Не удалось открыть файл:
+=	Cannot open SD	Не удалось открыть SD
+=	Capture	Захват
+=	Capture buffer filled; waveform may be incomplete.	Буфер заполнен; сигнал может быть неполным.
+=	Capture decode failed	Ошибка декодирования
+=	Capture exceeds 60 seconds	Захват дольше 60 секунд
+=	Capture Handshake	Захват рукопожатия
+=	Card did not expose a PAN	Карта не выдала PAN
+=	Card removed / NFC I/O error	Карта убрана / ошибка NFC
+=	Card response limit exceeded	Превышен лимит ответов карты
+=	Card status %02X%02X	Статус карты %02X%02X
+=	Carousel	Карусель
+=	CC1101 HW random noise (PN9)	Аппаратный шум CC1101 (PN9)
+=	CC1101 Pins	Пины CC1101
+=	Change Frequency	Сменить частоту
+=	Change MAC	Сменить MAC

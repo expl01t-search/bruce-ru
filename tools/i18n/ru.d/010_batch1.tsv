@@ -1,0 +1,301 @@
+# batch 1: candidates 1-420
+=	TX power:	Мощн. TX:
+=	Channel:	Канал:
+=	Manufacturer:	Производитель:
+=	Methods:	Методы:
+=	Model:	Модель:
+=	Observed clients:	Видимые клиенты:
+=	PIN lock:	Блок PIN:
+=	WPS version:	Версия WPS:
+=	READ MODE	РЕЖИМ ЧТЕНИЯ
+=	SAVE MODE	РЕЖИМ СОХР.
+=	Waiting...	Ожидание...
+^	Press 	Нажмите
+=	Press [ESC] to exit	[ESC] - выход
+=	Press [OK] to save	[OK] - сохранить
+=	Press [OK] to stop	[OK] - стоп
+=	Bad request	Плохой запрос
+=	Closed	Закрыто
+=	FAILED	ОШИБКА
+=	OK - relaying	OK - передача
+=	Unsupported cmd	Неподдерж. команда
+$	 (Next)	 (Далее)
+$	 - HID Service	 - HID сервис
+$	 -> get creds	 -> получить данные
+$	 -> set ssid	 -> задать SSID
+=	-Clone tag	-Клонировать метку
+=	-Save dump	-Сохранить дамп
+=	-Write to tag	-Записать в метку
+$	 / Emulate	 / Эмуляция
+=	> All Captured	> Все захвачены
+$	 ACTIVE	 АКТИВЕН
+$	 active	 активно
+$	 advertisements	 объявлений
+$	 alert MACs	 MAC-тревог
+=	Alert:	Тревога:
+$	 APs	 точек
+$	 auth failed	 ошибка авторизации
+$	 bits	 бит
+=	Block	Блок
+=	Bright:	Яркость:
+$	 bursts	 пачек
+$	 bytes	 байт
+$	 bytes):	 байт):
+$	 captures	 захватов
+=	clicks	кликов
+$	 Command:	 Команда:
+$	 days 	 дн.
+$	 dBm	 дБм
+$	 devices restored.	 устройств восстановлено.
+$	 durations\n	 длительностей\n
+$	 Fail	 Сбой
+$	 Failed to read	 Ошибка чтения
+$	 file	 файл
+$	 hosts	 хостов
+$	 hrs 	 ч
+$	 kHz	 кГц
+$	 kHz max)	 кГц макс)
+$	 MHz	 МГц
+$	 MHz 	 МГц
+$	 mins	 мин
+$	 more	 ещё
+=	of	из
+$	 packets	 пакетов
+$	 pages of data to write	 стр. данных для записи
+$	 pkts sent	 пакетов отпр.
+$	 popups	 всплыв. окон
+=	PWR OFF IN %d/3	ВЫКЛ ЧЕРЕЗ %d/3
+=	RDS on!	RDS вкл!
+$	 read failed	 ошибка чтения
+$	 scanning...	 сканирование...
+$	 Scanning...	 Сканирование...
+=	Setup Si4713	Настройка Si4713
+$	 snaps	 снимков
+$	 snapshots	 снимков
+$	 spam advertisements	 спам-объявлений
+$	 success	 успешно
+=	TA on!	TA вкл!
+$	 targets...	 целей...
+$	 timeouts	 таймаутов
+$	 times	 раз
+$	 to act	 для действия
+$	 to deauth	 для деаутентиф.
+$	 to restart	 для перезапуска
+$	 to resume	 для продолжения
+$	 to start	 для запуска
+$	 transitions	 переходов
+=	Tuning:	Настройка:
+$	 uploaded	 загружено
+$	 vs GND	 отн. GND
+$	 write failed	 ошибка записи
+$	 write success	 запись успешна
+=	Found:	Найдено:
+$	" already exists	" уже существует
+=	(E) UART already in use	(E) UART уже занят
+=	(fallback: test URL)	(запасной: тестовый URL)
+=	(not found)	(не найдено)
+=	(Press SEL to abort)	(SEL - прервать)
+=	- !!! - Antenna too Weak for SRIX - !!!	- !!! - Антенна слаба для SRIX - !!!
+=	- !!! - T-Embed CC1101 detected - !!!	- !!! - Найден T-Embed CC1101 - !!!
+=	- PN532 module info	- Инфо о модуле PN532
+=	- Read 8-byte UID	- Чтение 8-байт. UID
+=	- Read/Clone complete tag (512B)	- Чтение/клон всей метки (512Б)
+=	- Save/Load .srix dumps	- Сохр./загр. дампов .srix
+=	-- Page Down --	-- Стр. вниз --
+=	-- Page Up --	-- Стр. вверх --
+=	-=Information=-	-=Информация=-
+=	-=Ninebot Tuning=-	-=Настройка Ninebot=-
+=	-> cred access disabled	-> доступ к данным выкл.
+=	-> SSID change disabled	-> смена SSID выкл.
+^	... and 	... и
+=	... and more devices	... и другие устройства
+$	/128 blocks	/128 блоков
+=	100-6000 MHz only	Только 100-6000 МГц
+=	5G WiFi Analyzer	Анализатор WiFi 5G
+=	5GHz/6GHz mode used	Режим 5/6 ГГц
+=	< BACK	< НАЗАД
+=	<< PREV | SEL | NEXT >>	<< НАЗ | ВЫБ | ДАЛ >>
+^	> Confirm (	> Подтвердить (
+=	> Exit: Esc	> Выход: Esc
+=	> Hop Mode: Sel	> Режим прыжков: Sel
+=	> Switch Mode: Next/Prev	> Смена режима: Next/Prev
+=	[ Start ]	[ Старт ]
+=	[!] Data blocks are incomplete	[!] Блоки данных неполные
+=	[!] Failed to read data blocks	[!] Ошибка чтения блоков
+=	[BAT]	[АКБ]
+=	[c] - Read Mifare Classic	[c] - Чтение Mifare Classic
+=	[ESC]  - exit	[ESC]  - выход
+=	[Esc] Cancel	[Esc] Отмена
+=	[ESC] Exit	[ESC] Выход
+=	[ESC] Stop	[ESC] Стоп
+=	[h] - Scan ISO14443A	[h] - Скан ISO14443A
+=	[H] - Scan ISO15693	[H] - Скан ISO15693
+=	[i] - Read ISO15693	[i] - Чтение ISO15693
+=	[l] - Scan EM4100	[l] - Скан EM4100
+=	[MEMORY]	[ПАМЯТЬ]
+=	[NETWORK]	[СЕТЬ]
+=	[NEXT] - save to SD/LittleFS	[NEXT] - сохранить на SD/LittleFS
+=	[NEXT] for options	[NEXT] - опции
+=	[ok] - Select mode	[ok] - Выбор режима
+=	[OK]Select [ESC]Back	[OK]Выбор [ESC]Назад
+=	[SCREEN]	[ЭКРАН]
+=	[SEL]  - view packets	[SEL]  - пакеты
+=	[SEL] Change Set. | [NEXT/PREV] Adjust Val.	[SEL] Параметр | [NEXT/PREV] Значение
+=	[STORAGE]	[ХРАНИЛИЩЕ]
+=	[u] - Read Mifare Ultralight	[u] - Чтение Mifare Ultralight
+=	_Disclaimer_	_Предупреждение_
+=	Aborted by user	Прервано пользователем
+=	Aborting factory reset.	Сброс отменён.
+=	Aborting...	Прерывание...
+=	About / limitations	О программе/ограничения
+=	Act Portal:	Портал:
+=	Act:	Акт.:
+=	ACTIVE	АКТИВЕН
+^	Active scan (	Активный скан (
+=	Active:	Активно:
+=	Address spoofing attack...	Подмена адреса...
+=	Address spoofing worked!	Подмена адреса удалась!
+=	Address:	Адрес:
+=	Adresse:	Адрес:
+=	Advanced	Дополнительно
+=	ADVANCED STATS	ПОДРОБНАЯ СТАТИСТИКА
+=	advertised	объявлено
+=	All codes sent!	Все коды отправлены!
+=	All common PINs failed	Частые PIN не подошли
+=	All devices restored	Все устройства восстановлены
+=	Already queued:	Уже в очереди:
+=	AMIIBO UPLOAD	ЗАГРУЗКА AMIIBO
+=	Amiibolink communication error	Ошибка связи Amiibolink
+=	Amiibolink connect error	Ошибка подключения Amiibolink
+=	Amiibolink Connected	Amiibolink подключен
+=	Amiibolink not found	Amiibolink не найден
+=	and brute-force recovery are not ported.	и перебор не перенесены.
+=	Android Just-Works worked!	Android Just-Works сработал!
+=	Antenna:	Антенна:
+=	AP INFO	ИНФО О ТОЧКЕ
+=	App Store installed	App Store установлен
+=	Apple spoof successful!	Подмена Apple удалась!
+=	Application not found	Приложение не найдено
+=	Application: V1	Приложение: V1
+=	Are you sure you want\nto Factory Reset?\nAll data will be lost!	Точно выполнить\nсброс настроек?\nВсе данные удалятся!
+=	ARP Poisoning	ARP-отравление
+=	ARP Spoofing	ARP-подмена
+=	Assign Pin A first	Сначала задайте пин A
+=	Assign Pin B first	Сначала задайте пин B
+=	Attack chain completed	Цепочка атак завершена
+=	Attack complete. Press any key to continue...	Атака завершена. Нажмите любую кнопку...
+=	ATTACK FAILED	АТАКА НЕ УДАЛАСЬ
+=	Attack running...	Атака идет...
+=	Attack stopped.	Атака остановлена.
+=	ATTACK SUCCESS	АТАКА УСПЕШНА
+=	Attempt HID keystroke injection?	Внедрить нажатия HID?
+=	Attempt PIN brute force?	Перебрать PIN?
+=	Attempt:	Попытка:
+=	Attempting Boot Protocol injection...	Внедрение Boot Protocol...
+=	Attempting forced re-pairing...	Принуд. повторное сопряжение...
+=	Attempting HFP connection...	Подключение HFP...
+=	Attempting Windows HID bypass...	Обход Windows HID...
+=	Audio Attacks	Аудиоатаки
+=	Audio Config	Настройки звука
+=	AUDIO CONTROL TEST	ТЕСТ УПРАВЛЕНИЯ ЗВУКОМ
+=	Auth mode:	Авторизация:
+=	AUTO CLICKER v1.1	АВТОКЛИКЕР v1.1
+=	Auto Hop OFF	Автопрыжки ВЫКЛ
+=	Auto Hop ON	Автопрыжки ВКЛ
+=	Auto Karma OFF	Авто Karma ВЫКЛ
+=	Auto Karma ON	Авто Karma ВКЛ
+=	Auto Portal OFF	Автопортал ВЫКЛ
+=	Auto Portal ON	Автопортал ВКЛ
+=	Auto save: Enabled	Автосохр.: вкл.
+=	Auto then runs Pixie and resumable PIN search. One PIN tests only your supplied PIN.\n	Auto запускает Pixie и перебор PIN с продолжением. One PIN проверяет только ваш PIN.\n
+=	Auto, Pixie Dust and WPS brute force test 12345670 first.\n	Auto, Pixie Dust и перебор WPS сначала пробуют 12345670.\n
+=	Auto-portal disabled	Автопортал выключен
+=	avail	доступно
+=	Avg Current:	Ср. ток:
+=	Avg Power Use:	Ср. потребление:
+=	AVRCP Service Present:	Сервис AVRCP:
+=	AVRCP test completed	Тест AVRCP завершен
+=	Background	Фон
+=	BadUSB & HID	BadUSB и HID
+=	Base SSID:	Базовый SSID:
+^	Battery 	Батарея
+=	BATTERY INFO	ИНФО О БАТАРЕЕ
+=	Battery:	Батарея:
+=	Baud 300 - 5000000	Скорость 300 - 5000000
+=	Baudrate	Скорость
+=	Beaconing OFF	Маяки ВЫКЛ
+=	Beaconing ON	Маяки ВКЛ
+^	Beacons 	Маяки
+=	Beacons:	Маяки:
+=	Binary:	Двоичн.:
+=	Bits:	Биты:
+=	Blacklist:	Черный список:
+=	BLE API OFF	BLE API ВЫКЛ
+=	BLE API ON > Advertising as 'Bruce'	BLE API ВКЛ > Имя 'Bruce'
+=	BLE device name	Имя BLE-устройства
+=	BLE Disabled	BLE выключен
+=	BLE Enabled	BLE включен
+=	BLE disconnect	BLE отключен
+=	BLE JAMMER	BLE ГЛУШИЛКА
+=	BLE jamming stopped	Глушение BLE остановлено
+=	BLE Keyboard:	BLE клавиатура:
+=	BLE Mode	Режим BLE
+=	BLE RX Fail	Ошибка приема BLE
+=	BLE scan error	Ошибка скана BLE
+=	BLE Send	BLE отправка
+=	BLE Server Fail	Ошибка сервера BLE
+=	BLE Service Fail	Ошибка сервиса BLE
+=	BLE Sniffer	BLE сниффер
+=	BLE TX Fail	Ошибка передачи BLE
+^	Block 	Блок
+=	Blocks:	Блоки:
+=	BlockSize:	Размер блока:
+=	Blue	Синий
+=	Board with no PSRAM, closing BLE Stack	Нет PSRAM, закрываю стек BLE
+=	Board with no PSRAM, closing WiFi Stack	Нет PSRAM, закрываю стек WiFi
+=	Bonding established!	Связь установлена!
+=	Boot Protocol injection successful!	Boot Protocol внедрен!
+=	Booting	Загрузка
+=	Brightness:	Яркость:
+=	Broadcast mode	Режим вещания
+=	Broadcast started:	Вещание начато:
+=	BROADCAST STATS	СТАТИСТИКА ВЕЩАНИЯ
+=	Broadcast stopped	Вещание остановлено
+=	Broadcast:	Вещание:
+=	Broadcasts:	Вещаний:
+=	BROWSE LITTLEFS	ОБЗОР LITTLEFS
+=	BROWSE SD	ОБЗОР SD
+=	Bruce Version:	Версия Bruce:
+=	Btn name:	Имя кнопки:
+=	Btn:	Кн.:
+=	Buffer cleared	Буфер очищен
+=	buffer overflow, data may be truncated	переполнение буфера, данные обрезаны
+=	Bursts:	Пачки:
+=	Bus:	Шина:
+^	Button 	Кнопка
+=	Button:	Кнопка:
+=	Bytes: %d	Байт: %d
+=	Cached: streaming	Кэш: потоковая
+=	Cancel	Отмена
+=	Canceled	Отменено
+=	Cancelled	Отменено
+=	Cannot allocate WiFite worker	Нет памяти для WiFite
+=	Cannot copy Folder	Нельзя копировать папку
+=	Cannot create file	Не удалось создать файл
+=	Cannot create log	Не удалось создать лог
+=	Cannot encode this signal	Не удается закодировать сигнал
+=	Cannot find radio	Радио не найдено
+=	Cannot open file	Не удалось открыть файл
+=	Cannot open file!	Не удалось открыть файл!
+=	Cannot open SRIX folder!	Не открыть папку SRIX!
+=	Cannot open SubGhz file	Не открыть файл SubGhz
+=	Cannot open wordlist	Не открыть словарь
+=	Captive Portal: ACTIVE	Портал: АКТИВЕН
+=	Capture failed	Ошибка захвата
+=	Capture failed/aborted	Захват не удался/прерван
+=	capture failing	сбой захвата
+=	Capture is truncated	Захват обрезан
+=	Capture Mode	Режим захвата
+=	Captured	Захвачено
+=	CAPTURED PACKETS	ЗАХВАЧЕННЫЕ ПАКЕТЫ
+=	Captured:	Захвачено:

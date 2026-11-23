@@ -1,0 +1,19 @@
+# Bruce firmware - Russian UI dictionary
+# Format: <type>\t<english>\t<russian>   (type: = exact, ^ prefix, $ suffix)
+# Compiled by tools/i18n/gen_i18n.py into src/core/i18n_ru_data.h at build time.
+# Keep translations short: the screen is 240x135 (20 chars per line at the menu font size).
+
+# --- core / menus ---
+=	Back	Назад
+=	Main Menu	Главное меню
+=	Config	Настройки
+=	Display & UI	Экран и интерфейс
+=	Language: Russian	Язык: Русский
+=	Language: English	Язык: English
+^	Connecting to 	Подключение к
+$	 networks	 сетей
+=	Signal: %d dBm	Сигнал: %d дБм
+=	Status:	Статус:
+=	Connected	Подключено
+# test entry for a UTF-8 key (used by tools/i18n/test)
+=	Go → There	Туда
