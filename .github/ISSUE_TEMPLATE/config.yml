@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Вопросы и идеи
+    url: https://github.com/expl01t-search/bruce-ru/discussions
+    about: Как прошить, что умеет, предложения — в Discussions
+  - name: Оригинальный Bruce
+    url: https://github.com/BruceDevices/firmware/issues
+    about: Ошибки, которые есть и в английской версии, лучше сообщать авторам Bruce

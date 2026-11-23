@@ -4,12 +4,14 @@
 
 <p>
   <a href="https://github.com/expl01t-search/bruce-ru/releases/latest"><img src="https://img.shields.io/github/v/release/expl01t-search/bruce-ru?style=for-the-badge&color=39ff6a&labelColor=161b22&label=релиз" alt="Последний релиз"></a>
+  <a href="https://github.com/expl01t-search/bruce-ru/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/expl01t-search/bruce-ru/build.yml?style=for-the-badge&color=39ff6a&labelColor=161b22&label=сборка" alt="Сборка"></a>
   <img src="https://img.shields.io/badge/M5StickC-Plus2-39ff6a?style=for-the-badge&labelColor=161b22" alt="M5StickC Plus2">
   <img src="https://img.shields.io/badge/ESP32-PlatformIO-39ff6a?style=for-the-badge&labelColor=161b22&logo=espressif&logoColor=39ff6a" alt="ESP32 / PlatformIO">
   <a href="LICENSE"><img src="https://img.shields.io/badge/лицензия-AGPL--3.0-39ff6a?style=for-the-badge&labelColor=161b22" alt="AGPL-3.0"></a>
 </p>
 
 <a href="https://github.com/expl01t-search/bruce-ru/releases/latest"><img src="https://img.shields.io/badge/⬇_Скачать_прошивку-.bin_для_M5StickC_Plus2-39ff6a?style=for-the-badge&labelColor=0d1117" alt="Скачать прошивку"></a>
+<a href="README.en.md"><img src="https://img.shields.io/badge/English-README.en.md-161b22?style=for-the-badge" alt="English"></a>
 
 <br><br>
 
@@ -101,6 +103,13 @@ python -m platformio run -e m5stack-cplus2
 </details>
 
 <img src="docs/divider.svg" width="100%" alt="">
+
+## `> помочь проекту`
+
+- ⭐ **Поставь звезду** — так репозиторий проще найти тем, кому он нужен.
+- Нашёл **английскую строку** на экране или кривой перевод — открой [issue «Перевод»](https://github.com/expl01t-search/bruce-ru/issues/new?template=translation.yml), хватит фото экрана.
+- Хочешь добавить свой язык на кириллице (украинский, белорусский, казахский…) или новую тему интерфейса — смотри [CONTRIBUTING.md](CONTRIBUTING.md).
+- Вопросы и идеи — в [Discussions](https://github.com/expl01t-search/bruce-ru/discussions).
 
 ## `> важно`
 

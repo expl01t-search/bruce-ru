@@ -1,0 +1,32 @@
+name: Перевод
+description: Английская строка на экране, кривой или слишком длинный перевод
+title: "[перевод] "
+labels: ["перевод"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо! Достаточно фото экрана или текста строки — перевод добавлю сам.
+        Совет: serial-команда `i18n screen` выводит все строки, которые сейчас на экране.
+  - type: input
+    id: original
+    attributes:
+      label: Строка на экране
+      placeholder: "Scan networks"
+    validations:
+      required: true
+  - type: input
+    id: suggestion
+    attributes:
+      label: Как перевести (если знаешь)
+      placeholder: "Сканировать сети"
+  - type: input
+    id: where
+    attributes:
+      label: Где встречается
+      placeholder: "WiFi → Сканировать"
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Фото или скриншот
+      description: Перетащи сюда картинку

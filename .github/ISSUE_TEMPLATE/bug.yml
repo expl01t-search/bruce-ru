@@ -1,0 +1,48 @@
+name: Ошибка
+description: Что-то зависает, падает или работает не так
+title: "[баг] "
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Версия прошивки
+      placeholder: "v1.17-ru.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: style
+    attributes:
+      label: Стиль и язык
+      options:
+        - Фосфор, русский
+        - Фосфор, английский
+        - Классический, русский
+        - Классический, английский
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Что делал
+      placeholder: |
+        1. Открыл …
+        2. Выбрал …
+        3. Стик перезагрузился
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Что ожидал увидеть
+  - type: textarea
+    id: log
+    attributes:
+      label: Лог из serial-порта (115200), если есть
+      render: text
+  - type: checkboxes
+    id: upstream
+    attributes:
+      label: Проверка
+      options:
+        - label: С английским языком и классическим стилем ошибка тоже есть (тогда она, скорее всего, в оригинальном Bruce)

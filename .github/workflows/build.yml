@@ -1,0 +1,54 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["**.md", "docs/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  i18n-tests:
+    name: Translation tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate dictionary
+        run: python tools/i18n/gen_i18n.py
+      - name: Unit tests
+        run: |
+          g++ -std=c++17 -I tools/i18n/test -I src/core tools/i18n/test/test_i18n.cpp -o test_i18n
+          ./test_i18n
+
+  firmware:
+    name: Firmware (M5StickC Plus2)
+    needs: i18n-tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/pip
+          key: pio-${{ runner.os }}-${{ hashFiles('platformio.ini', 'boards/**') }}
+      - name: Install PlatformIO
+        run: pip install -U platformio
+      - name: Build
+        run: pio run -e m5stack-cplus2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Bruce-m5stack-cplus2-ru
+          path: Bruce-m5stack-cplus2.bin
+          if-no-files-found: error
