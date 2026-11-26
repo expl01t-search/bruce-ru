@@ -96,9 +96,18 @@ static bool isBoundary(const char *s, size_t n, size_t i) {
 }
 
 void toUpper(String &s) {
+    int cont = 0; // continuation bytes left in a UTF-8 sequence (emoji etc.): leave them alone
     for (size_t i = 0; i < s.length(); i++) {
         unsigned char c = (unsigned char)s[i];
-        if (c >= 'a' && c <= 'z') s.setCharAt(i, c - 32);
+        if (cont > 0 && (c & 0xC0) == 0x80) {
+            cont--;
+            continue;
+        }
+        cont = 0;
+        if (c >= 0xF0) cont = 3;
+        else if (c >= 0xE0) cont = 2;
+        else if (c >= 0xC0) cont = 1;
+        else if (c >= 'a' && c <= 'z') s.setCharAt(i, c - 32);
         else if (c >= 0xA0 && c <= 0xBF) s.setCharAt(i, c - 0x20);
     }
 }
@@ -143,9 +152,54 @@ static void appendTranslated(String &out, const char *s, size_t n) {
     out.concat(s + b, n - b);
 }
 
+// UTF-8 Cyrillic (SSIDs, file names, web input) takes two bytes per letter, which breaks every
+// "one byte = one character" layout calculation and lets substring() cut a letter in half.
+// Convert it to the one-byte font encoding (0x80..0xBF) used by the translations themselves.
+static bool hasUtf8Cyrillic(const char *s) {
+    for (; *s; s++)
+        if (((unsigned char)*s == 0xD0 || (unsigned char)*s == 0xD1) && ((unsigned char)s[1] & 0xC0) == 0x80)
+            return true;
+    return false;
+}
+
+static String fromUtf8Cyrillic(const char *s) {
+    String out;
+    out.reserve(strlen(s));
+    while (*s) {
+        unsigned char c = (unsigned char)*s, d = (unsigned char)s[1];
+        if (c == 0xD0 && d >= 0x90 && d <= 0xBF) { // А..п
+            out += (char)(0x80 + (d - 0x90));
+            s += 2;
+        } else if (c == 0xD1 && d >= 0x80 && d <= 0x8F) { // р..я
+            out += (char)(0xB0 + (d - 0x80));
+            s += 2;
+        } else if (c == 0xD0 && d == 0x81) { // Ё -> Е (the font has no Ё)
+            out += (char)0x85;
+            s += 2;
+        } else if (c == 0xD1 && d == 0x91) { // ё -> е
+            out += (char)0xA5;
+            s += 2;
+        } else {
+            out += (char)c;
+            s++;
+        }
+    }
+    return out;
+}
+
+static String trCore(const char *src);
+
 String tr(const char *src) {
     if (!src) return String();
+    if (hasUtf8Cyrillic(src)) {
+        String norm = fromUtf8Cyrillic(src);
+        return s_lang == LANG_RU ? trCore(norm.c_str()) : norm;
+    }
     if (s_lang != LANG_RU) return String(src);
+    return trCore(src);
+}
+
+static String trCore(const char *src) {
     size_t len = strlen(src);
     if (len == 0 || len > 400) return String(src);
 
@@ -217,18 +271,20 @@ String tr(const char *src) {
 }
 
 String tr(const String &s) {
-    if (s_lang != LANG_RU || s.length() == 0) return s;
+    if (s.length() == 0) return s;
     return tr(s.c_str());
 }
 
 const String &maybe(const String &src, String &tmp) {
-    if (s_lang != LANG_RU || src.length() < 2) return src;
-    const char *p = src.c_str();
-    for (; *p; p++) {
-        char c = *p;
-        if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) break;
+    if (src.length() < 2) return src;
+    bool latin = false, multibyte = false;
+    for (const char *p = src.c_str(); *p && !(latin && multibyte); p++) {
+        unsigned char c = (unsigned char)*p;
+        if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) latin = true;
+        else if (c >= 0xC0) multibyte = true;
     }
-    if (!*p) return src; // numbers, symbols, already translated text
+    // nothing to do for numbers, symbols and already translated text
+    if (!multibyte && (!latin || s_lang != LANG_RU)) return src;
     tmp = tr(src.c_str());
     return tmp;
 }

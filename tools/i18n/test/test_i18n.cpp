@@ -52,11 +52,25 @@ int main() {
     String up = i18n::tr("Main Menu");
     i18n::toUpper(up);
     expect("toUpper", up.d, "ГЛАВНОЕ МЕНЮ");
+    // UTF-8 Cyrillic from the outside world becomes one byte per letter
+    expect("utf8 cyrillic kept", i18n::tr("Привет").d, "Привет");
     g_total++;
-    if (i18n::tr("Привет").d != std::string("Привет")) {
+    if (i18n::tr("Привет, мир").length() != 11) {
         g_fail++;
-        printf("FAIL utf8 user data untouched\n");
-    } else printf("ok   utf8 user data untouched\n");
+        printf("FAIL utf8 cyrillic is one byte per letter (len %u)\n", (unsigned)i18n::tr("Привет, мир").length());
+    } else printf("ok   utf8 cyrillic is one byte per letter\n");
+    expect("utf8 yo -> ye", i18n::tr("Ёлка ёж").d, "Елка еж");
+    expect("utf8 ssid + prefix", i18n::tr("Connecting to Дом_5G").d, "Подключение к Дом_5G");
+    {
+        String e("caf\xC3\xA9 \xF0\x9F\x98\xBA x"); // é and an emoji: not Cyrillic, kept as is
+        String t = i18n::tr(e);
+        i18n::toUpper(t);
+        g_total++; // raw bytes: expect() would re-encode 0x80..0xBF
+        if (t.d != std::string("CAF\xC3\xA9 \xF0\x9F\x98\xBA X")) {
+            g_fail++;
+            printf("FAIL other utf8 untouched by toUpper\n");
+        } else printf("ok   other utf8 untouched by toUpper\n");
+    }
     expect("mixed ru/en kept", i18n::tr(i18n::tr("Back").d + " Home").d, "Назад Home");
     expect("utf8 key (arrow)", i18n::tr("Go \xE2\x86\x92 There").d, "Туда");
     expect("no partial word prefix", i18n::tr("Backup").d, "Backup");
@@ -88,6 +102,16 @@ int main() {
     i18n::setLanguage(i18n::LANG_EN);
     expect("english mode", i18n::tr("Back").d, "Back");
     expect("english fmt", std::string(i18n::trf("Signal: %d dBm")), "Signal: %d dBm");
+    {
+        String tmp, ssid("Сеть Home");
+        const String &r = i18n::maybe(ssid, tmp);
+        expect("english mode utf8 normalised", r.d, "Сеть Home");
+        g_total++;
+        if (r.length() != 9) {
+            g_fail++;
+            printf("FAIL english mode utf8 length %u\n", (unsigned)r.length());
+        } else printf("ok   english mode utf8 length\n");
+    }
     printf("\n%d/%d passed\n", g_total - g_fail, g_total);
     return g_fail ? 1 : 0;
 }

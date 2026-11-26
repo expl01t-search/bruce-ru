@@ -45,6 +45,8 @@ void header(const String &title, const String &counter);
 Opt_Coord drawList(
     int index, std::vector<Option> &options, const char *title, bool firstRender, bool border, bool compact
 );
+// Forget what the list rows show; call after something else drew over the list.
+void invalidateList();
 
 // main menu (carousel style)
 void mainMenu(MenuItemInterface *item, int idx, int total, const String &prev, const String &next);

@@ -171,6 +171,15 @@ void header(const String &title, const String &counter) {
 // ---------------------------------------------------------------- lists
 static int s_top = 0;
 
+// per-row cache of the full-screen list (see drawList)
+static String s_rowKey[ROWS];
+static const Option *s_rowsOptions = nullptr;
+static int s_rowsTotal = -1;
+static String s_rowsTitle;
+static bool s_rowsValid = false;
+
+void invalidateList() { s_rowsValid = false; }
+
 static void keepVisible(int index, int total, int rows, bool reset) {
     if (reset) s_top = index - rows + 1;
     if (index < s_top) s_top = index;
@@ -234,23 +243,54 @@ Opt_Coord drawList(
 
     // ---- full-screen list (submenus and regular menus)
     keepVisible(index, total, ROWS, firstRender);
+    // Moving the cursor inside the visible window changes only two rows. Each row remembers
+    // what it shows (label, colour, highlight) and is repainted only when that changes, which
+    // turns a 5-row repaint into a 2-row one and removes the flicker on long lists.
+    const String ttl = title ? String(title) : String("");
+    if (firstRender || s_rowsOptions != options.data() || s_rowsTotal != total || !s_rowsTitle.equals(ttl))
+        s_rowsValid = false;
     if (firstRender) {
         tft.fillRect(0, 14, tftWidth, 109, BG());
         footerHint();
     }
     char cnt[12];
     snprintf(cnt, sizeof(cnt), "%02d/%02d", index + 1, total);
-    header(title ? String(title) : String(""), String(cnt));
+    header(ttl, String(cnt));
+    if (!s_rowsValid) {
+        for (auto &k : s_rowKey) k = "";
+        s_rowsOptions = options.data();
+        s_rowsTotal = total;
+        s_rowsTitle = ttl;
+        s_rowsValid = true;
+    }
 
     for (int k = 0; k < ROWS; k++) {
         int i = s_top + k;
         int y = ROW_Y + k * ROW_H;
-        tft.fillRect(0, y, tftWidth - 10, ROW_H - 2, BG());
-        if (i >= total) continue;
+        if (i >= total) {
+            if (s_rowKey[k] != "-") tft.fillRect(0, y, tftWidth - 10, ROW_H - 2, BG());
+            s_rowKey[k] = "-";
+            continue;
+        }
         options[i].x = 0;
         options[i].y = y;
         options[i].w = tftWidth;
         options[i].h = ROW_H;
+        String key = options[i].label;
+        key += i == index ? '\x02' : '\x01';
+        key += String(rowColor(options[i]), 16);
+        if (key.equals(s_rowKey[k])) {
+            if (i == index) { // the scroller draws over this row, so it still needs the coordinates
+                coord.x = 4 + LW * FM;
+                coord.y = y + 1;
+                coord.size = 18;
+                coord.fgcolor = PRI();
+                coord.bgcolor = BG();
+            }
+            continue;
+        }
+        s_rowKey[k] = key;
+        tft.fillRect(0, y, tftWidth - 10, ROW_H - 2, BG());
         String lab = T(options[i].label);
         if (i == index) {
             tft.fillRect(2, y, tftWidth - 12, 16, PRI()); // inverse video bar

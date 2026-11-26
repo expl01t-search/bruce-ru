@@ -607,6 +607,12 @@ void BruceConfig::setUiStyle(int value) {
         priColor = fos::DEF_PRI;
         secColor = fos::DEF_SEC;
         bgColor = fos::DEF_BG;
+    } else if (priColor == fos::DEF_PRI && secColor == fos::DEF_SEC && bgColor == fos::DEF_BG) {
+        // back to Classic with the untouched green palette: restore Bruce's own colours
+        // (a palette the user picked by hand is kept)
+        priColor = DEFAULT_PRICOLOR;
+        secColor = DEFAULT_PRICOLOR - 0x2000;
+        bgColor = 0x0000;
     }
     saveFile();
 }

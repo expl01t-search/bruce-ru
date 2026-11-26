@@ -47,16 +47,19 @@ bool __attribute__((weak)) isCharging() { return hal_gauge_is_charging(); }
 void displayScrollingText(const String &srcText, Opt_Coord &coord, bool highlight) {
     // called on every pass of the menu loop: translate once per label, not every few ms
     static String s_src, s_text;
+    static int i = 0;
+    static long _lastmillis = 0;
     if (!s_src.equals(srcText) || s_text.length() == 0) {
         s_src = srcText;
         s_text = i18n::tr(srcText);
+        s_text += "        "; // spaces for smooth looping
+        // a new label starts from its first letter after a short pause, not where the
+        // previous label's scroll happened to be
+        i = 0;
+        _lastmillis = millis() + 1000;
     }
-    const String &text = s_text;
-    int len = text.length();
-    String displayText = text + "        "; // Add spaces for smooth looping
-    int scrollLen = len + 8;                // Full text plus space buffer
-    static int i = 0;
-    static long _lastmillis = 0;
+    const int len = (int)s_text.length() - 8;
+    const int scrollLen = len + 8; // full text plus space buffer
     if (highlight) tft.setTextColor(coord.bgcolor, coord.fgcolor);
     else tft.setTextColor(coord.fgcolor, coord.bgcolor);
     if (len < coord.size) {
@@ -64,7 +67,7 @@ void displayScrollingText(const String &srcText, Opt_Coord &coord, bool highligh
         return;
     } else if (millis() > _lastmillis + 200) {
         String scrollingPart =
-            displayText.substring(i, i + (coord.size - 1)); // Display charLimit characters at a time
+            s_text.substring(i, i + (coord.size - 1)); // Display charLimit characters at a time
         tft.fillRect(
             coord.x,
             coord.y,
@@ -666,6 +669,7 @@ int loopOptions(
             bool renderedByLambda = false;
             if (options[index].hover)
                 renderedByLambda = options[index].hover(options[index].hoverPointer, true);
+            if (renderedByLambda) fos::invalidateList();
 
             if (!renderedByLambda) {
                 if (fos::active() && menuType != MENU_TYPE_MAIN)
@@ -876,9 +880,13 @@ int loopOptions(
                         );
                     vTaskDelay(10 / portTICK_RATE_MS);
                 }
-                tft.drawArc(
-                    tftWidth / 2, tftHeight / 2, 25, 15, 0, 360, bruceConfig.bgColor, bruceConfig.bgColor
-                );
+                if (millis() - _tmp > 200) {
+                    // the hold arc was drawn over the list rows; erase it and repaint them all
+                    tft.drawArc(
+                        tftWidth / 2, tftHeight / 2, 25, 15, 0, 360, bruceConfig.bgColor, bruceConfig.bgColor
+                    );
+                    fos::invalidateList();
+                }
                 LongPress = false;
 #endif
                 if (millis() - _tmp > 700) { // longpress detected to exit
